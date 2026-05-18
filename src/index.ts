@@ -37,7 +37,7 @@ mongoose
 
     await connectRedis();
 
-    app.listen(PORT, () => {
+    app.listen(PORT || 3001, () => {
       console.log(`Server running on port ${PORT}`);
     });
   })
