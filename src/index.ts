@@ -28,7 +28,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/movies", movieRoutes);
 
 app.use(errorHandler);
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 mongoose
   .connect(process.env.MONGODB_URL as string)
@@ -37,7 +37,7 @@ mongoose
 
     await connectRedis();
 
-    app.listen(PORT || 3001, () => {
+    app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
   })
